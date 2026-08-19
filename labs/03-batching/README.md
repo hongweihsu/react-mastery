@@ -1,5 +1,35 @@
 # Lab 03｜Batching and updater queue
 
+<!-- junior-detail-v1 -->
+## Junior 實驗導航
+
+### 這個 lab 真正要學什麼
+
+1. 三個 value updates 都使用同一份 count snapshot。
+2. Updater functions 會依序接收 queue 中的前一個結果。
+3. 把每次 update 寫成 queue table，不要只背 1 和 3。
+
+### 不要直接找修法：先建立 observation table
+
+| 時間點 | Component execution | State/props snapshot | Effect/async | DOM text/input |
+|---|---|---|---|---|
+| 初次載入 | 先填寫 | 先填寫 | 先填寫 | 先填寫 |
+| 第一次操作後 | 先填寫 | 先填寫 | 先填寫 | 先填寫 |
+| bug 出現時 | 先填寫 | 先填寫 | 先填寫 | 先填寫 |
+
+### 操作時只看一件事
+
+第一次跑 starter，只確認 bug/behaviour 能否重現。第二次才開 Console。第三次才錄 Profiler。一次開太多訊號，junior 很容易把 execution log、commit 與 DOM change 混在一起。
+
+### 如何描述 root cause
+
+不要只寫「dependency/key/memo 寫錯」。使用完整句型：
+
+> 當我做＿＿＿時，React 因為＿＿＿再次執行／保留 identity；JavaScript value/reference 是＿＿＿；所以 observable result 變成＿＿＿。
+
+在能填完這句以前，先不要看 solution。
+
+
 🟡 Intermediate
 
 對應概念：[04_events_batching](../../concepts/04_events_batching.md)

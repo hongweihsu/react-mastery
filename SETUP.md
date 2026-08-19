@@ -44,3 +44,10 @@ Development 中 React 可能額外呼叫 render calculation，並對 Effects 執
 - Stale Vite cache：停止 dev server 後重開；不要隨意刪 source。
 - Test DOM error：tests 使用 jsdom，不等同完整 browser layout/paint。
 - React DevTools 無 tree：確認頁面使用 development build 且 extension 已啟用。
+
+
+## 第一次啟動時
+
+只做以下五步：npm install、npm run dev、開啟 localhost、選第一個 starter、打開 Console。先不要同時學 Profiler、testing 與所有 scripts。
+
+看到畫面不代表理解；先按一次按鈕，分別記錄 component execution log 與畫面文字是否變化。這就是整套課程最重要的第一個 distinction。

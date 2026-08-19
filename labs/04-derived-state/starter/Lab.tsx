@@ -1,3 +1,11 @@
+/* <!-- junior-detail-v1 --> */
+/*
+ * 這是 starter。先閱讀 README、寫 prediction，再執行。刻意的問題應從 React/JavaScript mental model 解釋，不要只消除 lint warning。
+ * Lab focus:
+ * - firstName 與 lastName 已是 sources of truth。
+ * - fullName 若另存 state，就需要同步並可能短暫不一致。
+ * - 先問能否在 render 直接計算，再問是否需要 Effect。
+ */
 import { useEffect, useState } from "react";
 /* eslint-disable react-hooks/set-state-in-effect -- intentional duplicated-state teaching bug */
 export default function Lab(){const[first,setFirst]=useState("Ada");const[last,setLast]=useState("Lovelace");const[full,setFull]=useState("");useEffect(()=>setFull(first+" "+last),[first,last]);return <section><label>First <input value={first} onChange={e=>setFirst(e.target.value)}/></label><label>Last <input value={last} onChange={e=>setLast(e.target.value)}/></label><p>{full}</p></section>}

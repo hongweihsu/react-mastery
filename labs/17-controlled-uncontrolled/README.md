@@ -1,5 +1,35 @@
 # Lab 17｜Controlled vs uncontrolled
 
+<!-- junior-detail-v1 -->
+## Junior 實驗導航
+
+### 這個 lab 真正要學什麼
+
+1. Controlled value 的 owner 必須同時提供 onChange path。
+2. Uncontrolled input 由 DOM/local state 擁有，整合較少但協調能力不同。
+3. 選擇依 validation、reset、跨元件 coordination，而非口號。
+
+### 不要直接找修法：先建立 observation table
+
+| 時間點 | Component execution | State/props snapshot | Effect/async | DOM text/input |
+|---|---|---|---|---|
+| 初次載入 | 先填寫 | 先填寫 | 先填寫 | 先填寫 |
+| 第一次操作後 | 先填寫 | 先填寫 | 先填寫 | 先填寫 |
+| bug 出現時 | 先填寫 | 先填寫 | 先填寫 | 先填寫 |
+
+### 操作時只看一件事
+
+第一次跑 starter，只確認 bug/behaviour 能否重現。第二次才開 Console。第三次才錄 Profiler。一次開太多訊號，junior 很容易把 execution log、commit 與 DOM change 混在一起。
+
+### 如何描述 root cause
+
+不要只寫「dependency/key/memo 寫錯」。使用完整句型：
+
+> 當我做＿＿＿時，React 因為＿＿＿再次執行／保留 identity；JavaScript value/reference 是＿＿＿；所以 observable result 變成＿＿＿。
+
+在能填完這句以前，先不要看 solution。
+
+
 🟡 Intermediate
 
 對應概念：[11_component_api_design](../../concepts/11_component_api_design.md)
