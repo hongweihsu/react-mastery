@@ -1,0 +1,2 @@
+import { useState } from "react";
+export default function Lab(){const[user,setUser]=useState("Ada");const[query,setQuery]=useState("");const[theme,setTheme]=useState("light");return <section><h2>Giant dashboard</h2><input aria-label="user" value={user} onChange={e=>setUser(e.target.value)}/><input aria-label="search" value={query} onChange={e=>setQuery(e.target.value)}/><button onClick={()=>setTheme(t=>t==="light"?"dark":"light")}>{theme}</button><p>{user} searches {query}</p></section>}

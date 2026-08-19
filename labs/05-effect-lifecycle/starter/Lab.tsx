@@ -1,0 +1,2 @@
+import { useEffect, useState } from "react";
+export default function Lab(){const[room,setRoom]=useState("alpha");useEffect(()=>{console.log("connect",room);const id=setInterval(()=>console.log("ping",room),2000);return()=>{console.log("disconnect",room);clearInterval(id)}},[room]);return <section><h2>Room {room}</h2><button onClick={()=>setRoom(r=>r==="alpha"?"beta":"alpha")}>Switch room</button></section>}

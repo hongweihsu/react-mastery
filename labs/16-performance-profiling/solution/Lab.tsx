@@ -1,0 +1,3 @@
+import { useMemo, useState } from "react";
+function SlowList({query}:{query:string}){const result=useMemo(()=>{console.time("filter");let total=0;for(let i=0;i<2_000_000;i++)if(String(i).includes(query))total++;console.timeEnd("filter");return total},[query]);return <p>{result} matches</p>}
+export default function Lab(){const[q,setQ]=useState("1");const[theme,setTheme]=useState(false);return <section className={theme?"dark":""}><label>Query <input value={q} onChange={e=>setQ(e.target.value)}/></label><button onClick={()=>setTheme(t=>!t)}>Theme</button><SlowList query={q}/><p>Compare Profiler before/after; do not infer from code alone.</p></section>}

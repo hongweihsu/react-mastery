@@ -1,0 +1,1 @@
+export default function Lab(){const options={mode:"active"};return <section><h2>Mode: {options.mode}</h2><p>No external system existed, so the correct fix removes the Effect and duplicated state.</p></section>}

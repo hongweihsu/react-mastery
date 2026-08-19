@@ -1,0 +1,3 @@
+import { createContext, useContext, useState } from "react";
+const ThemeContext=createContext("light");const CountContext=createContext<{count:number;inc:()=>void}|null>(null);function Theme(){const theme=useContext(ThemeContext);console.log("Theme consumer");return <p>Theme {theme}</p>}function Counter(){const v=useContext(CountContext)!;return <button onClick={v.inc}>Count {v.count}</button>}
+export default function Lab(){const[count,setCount]=useState(0);return <ThemeContext value="light"><CountContext value={{count,inc:()=>setCount(c=>c+1)}}><Theme/><Counter/></CountContext></ThemeContext>}

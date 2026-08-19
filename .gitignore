@@ -1,0 +1,24 @@
+# Personal learning workspace
+AGENTS.md
+.learning/
+
+# Dependencies
+node_modules/
+
+# Build
+dist/
+build/
+coverage/
+*.tsbuildinfo
+
+# Environment
+.env
+.env.*
+!.env.example
+
+# OS / editor
+.DS_Store
+.vscode/
+
+# Logs
+*.log
